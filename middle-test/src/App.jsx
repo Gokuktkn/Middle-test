@@ -13,9 +13,8 @@ function App() {
 
   const handleClick = (img) => {
     setMainImg(img);
-    dataFilter = data.data.filter((item) => item.id !== mainImg);
+    dataFilter = data.data.filter((item) => item.id !== img);
     setDataFilter(dataFilter);
-    // console.log("img: ",img, "data", dataFilter, "mainImg:", mainImg);
     dataMain = data.data.find((item) => item.id === img);
     setDataMain(dataMain);
     console.log(dataMain);
