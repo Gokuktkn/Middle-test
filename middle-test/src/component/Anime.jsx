@@ -2,10 +2,10 @@ import React from 'react'
 import data from '../data.json'
 import '../App.css'
 
-export const Anime = ({ data }) => {
+export const Anime = ({ data, handleClick }) => {
     return (
-        <div className='anime' onClick={() => handleClick(item.image)}>
-            <div className='img-list'>
+        <div className='anime' >
+            <div className='img-list' onClick={() => handleClick(data.id)}>
                 <p className='episode'>Episode {data.episode}</p>
                 <div className="effect-list"></div>
                 <img src={data.image} alt={data.movieName} />

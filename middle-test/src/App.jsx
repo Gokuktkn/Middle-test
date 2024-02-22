@@ -6,14 +6,19 @@ import data from './data.json'
 function App() {
   let [dataFilter, setDataFilter] = useState([]);
   const [mainImg, setMainImg] = useState("1");
-  const handleClick = (e) => {
-    console.log(e.target.value);
-    setMainImg(img);
-  }
+
   dataFilter = data.data.filter((item) => item.id !== mainImg);
-  const handleChange = () => {
-    dataFilter = data.data.filter((item) => item.id !== 1);
+
+  const handleClick = (img) => {
+    setMainImg(img);
+    dataFilter = data.data.filter((item) => item.id !== mainImg);
     setDataFilter(dataFilter);
+    console.log("img: ",img, "data", dataFilter, "mainImg:", mainImg);
+    // console.log("alo alo", data.data.find(item => {
+    //   if (item.id = mainImg) {
+    //     return item.image
+    //   }
+    // }));
   }
 
   return (
@@ -35,12 +40,12 @@ function App() {
             <p className='welcome'>What are you gonna watch today ?</p>
             <div className='background-img'>
               <div className="info-main">
-                <p className="name-main">{data.data[0].movieName}</p>
+                <p className="name-main">{mainImg}</p>
                 <p className='desc'>{data.data[0].description}</p>
               </div>
               <div className="main-img">
                 <div className="effect"></div>
-                <img src={data.data[0].image} alt="img ne" />
+                <img src={data.data.find((item) => item.id === mainImg)} alt="img ne" />
               </div>
             </div>
           </div>
@@ -48,7 +53,7 @@ function App() {
             <p className="title">New release</p>
             <div className="movies">
               {dataFilter.map(item => (
-                <Anime data={item} key={item.id} onClick={handleClick} />
+                <Anime data={item} key={item.id} handleClick={handleClick} />
               ))}
             </div>
           </div>
