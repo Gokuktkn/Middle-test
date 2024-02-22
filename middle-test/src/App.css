@@ -1,0 +1,154 @@
+.container {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 100px;
+    background-color: #192026;
+    color: white;
+    gap: 40px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    flex: 3;
+    display: flex;
+    gap: 90px;
+    align-items: center;
+}
+.logo{
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    color: #868686;
+}
+
+.search {
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #374151;
+    color: #868686;
+    border: 0;
+    font-size: 18px;
+}
+
+.main {
+    width: 1170px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+.title{
+    font-weight: 600;
+    font-size: 32px;
+}
+.welcome{
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #868686;
+}
+
+.background-img {
+    position: relative;
+    width: 1170px;
+    height: 400px;
+}
+
+.info-main {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 30px;
+    color: white;
+}
+.name-main{
+    font-weight: 600;
+    font-size: 36px;
+}
+.desc {
+    max-width: 70%;
+    font-size: 16px;
+}
+
+.background-img img {
+    width: 1170px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.main-img {
+    position: relative;
+}
+
+
+.effect {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(90deg, #2f2d2dc2, #ffffff00);
+    position: absolute;
+    z-index: 1;
+}
+.list-movie{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.movies {
+    display: flex;
+    justify-content: space-between;
+}
+
+.anime {
+    /* flex: 1; */
+    max-width: 170px;
+}
+
+.img-list {
+    position: relative;
+    width: 170px;
+    height: 254px;
+}
+.img-list img{
+    width: 170px;
+    height: 254px;
+    border-radius: 7px;
+    object-fit: cover;
+}
+.effect-list {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(0, #121212e8, #ffffff00);
+    position: absolute;
+    border-radius: 7px;
+}
+
+.episode {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    z-index: 1;
+    color: white;
+    font-size: 16px;
+}
+.name-list{
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+}
