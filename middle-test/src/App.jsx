@@ -6,19 +6,19 @@ import data from './data.json'
 function App() {
   let [dataFilter, setDataFilter] = useState([]);
   const [mainImg, setMainImg] = useState("1");
+  let [dataMain, setDataMain] = useState([]);
 
   dataFilter = data.data.filter((item) => item.id !== mainImg);
+  dataMain = data.data.find((item) => item.id === mainImg);
 
   const handleClick = (img) => {
     setMainImg(img);
     dataFilter = data.data.filter((item) => item.id !== mainImg);
     setDataFilter(dataFilter);
-    console.log("img: ",img, "data", dataFilter, "mainImg:", mainImg);
-    // console.log("alo alo", data.data.find(item => {
-    //   if (item.id = mainImg) {
-    //     return item.image
-    //   }
-    // }));
+    // console.log("img: ",img, "data", dataFilter, "mainImg:", mainImg);
+    dataMain = data.data.find((item) => item.id === img);
+    setDataMain(dataMain);
+    console.log(dataMain);
   }
 
   return (
@@ -40,12 +40,12 @@ function App() {
             <p className='welcome'>What are you gonna watch today ?</p>
             <div className='background-img'>
               <div className="info-main">
-                <p className="name-main">{mainImg}</p>
-                <p className='desc'>{data.data[0].description}</p>
+                <p className="name-main">{dataMain.movieName}</p>
+                <p className='desc'>{dataMain.description}</p>
               </div>
               <div className="main-img">
                 <div className="effect"></div>
-                <img src={data.data.find((item) => item.id === mainImg)} alt="img ne" />
+                <img src={dataMain.image} alt="img ne" />
               </div>
             </div>
           </div>
